@@ -2,13 +2,21 @@
 
 ## 실험 요약
 
-| 실험 | 모델 | 입력 | Dev LogLoss | Dev Acc | 순위 |
-|------|------|------|------------|---------|------|
-| exp001 | ResNet50 | front | 0.4178 | 82% | 70등 |
-| exp002 | ResNet50 (shared backbone) | front + top | 0.5956 | 72% | 미제출 |
-| **exp003** | **ConvNeXt-Small** | **front** | **0.1239** | **96%** | **31등** |
+| 실험 | 모델 | 방식 | CV/Dev LogLoss | 순위 |
+|------|------|------|---------------|------|
+| exp001 | ResNet50 | 단일, front | 0.4178 | 70등 |
+| exp002 | ResNet50 | 멀티뷰 front+top | 0.5956 | 미제출 |
+| exp003 | ConvNeXt-Small | 단일, front | 0.1239 | 31등 |
+| exp004 | ConvNeXt-Small | exp003 + TTA | - | 미제출 |
+| exp005 | ConvNeXt-Base | 단일, front | 0.1963 | 미제출 |
+| **exp006** | **ConvNeXt-Small** | **5-Fold 앙상블** | **0.0522** | **미제출** |
+| exp007 | ConvNeXt-Small | exp006 + TTA | - | 미제출 |
+| exp008 | ConvNeXt-Small | 5-Fold, 384px | 0.0622 | 미제출 |
+| exp009 | EfficientNet-B3 | 5-Fold, 300px | 0.0767 | 미제출 |
 
-각 실험의 상세 기록은 `experiments/exp00X/config.md` 참조.
+- 1등 점수: 0.01062
+- 현재 최고: exp006 (CV 0.0522)
+- 각 실험의 상세 기록은 `experiments/exp00X/config.md` 참조.
 
 ---
 
@@ -19,6 +27,9 @@
 3. **Multi-View는 단순 결합으로는 역효과**: shared backbone + concat은 오히려 성능 하락
 4. **Label Smoothing 효과적**: 경계 케이스에 대한 과도한 확신 방지
 5. **Overfitting 주의**: 데이터 1,000개로 적어서 정규화 필수
+6. **K-Fold 앙상블이 큰 효과**: 단일 모델 0.1239 → 5-Fold 0.0522 (58% 개선)
+7. **큰 모델/해상도가 항상 좋진 않음**: ConvNeXt-Base(0.1963), 384px(0.0622) 모두 Small 224보다 나쁨
+8. **다중 아키텍처 앙상블은 성능 차이가 크면 역효과**: EfficientNet(0.0767)을 섞으면 오히려 하락
 
 ## 환경 정보
 
@@ -34,23 +45,35 @@
 
 ```
 dacon/
-├── PLAN.md                          # 전략 계획서
-├── PROGRESS.md                      # 이 문서
-├── data/open (1)/                   # 데이터
+├── PLAN.md                              # 전략 계획서
+├── PROGRESS.md                          # 이 문서
+├── data/open (1)/                       # 데이터
 ├── experiments/
-│   ├── exp001_resnet50_front/       # ResNet50, front only
-│   │   ├── train.py, best_model.pth, submission.csv, config.md
-│   ├── exp002_resnet50_multiview/   # ResNet50, front+top (shared)
-│   │   ├── train.py, config.md
-│   └── exp003_convnext_front/       # ConvNeXt-Small, front only
-│       ├── train.py, inference.py, best_model.pth, submission.csv, config.md
-└── .venv/                           # 가상환경
+│   ├── exp001_resnet50_front/           # ResNet50, front only
+│   ├── exp002_resnet50_multiview/       # ResNet50, front+top
+│   ├── exp003_convnext_front/           # ConvNeXt-Small, front only
+│   ├── exp004_convnext_tta/             # exp003 + TTA
+│   ├── exp005_convnext_base/            # ConvNeXt-Base (오버피팅)
+│   ├── exp006_kfold_ensemble/           # 5-Fold ConvNeXt-Small ★ 최고
+│   ├── exp007_kfold_tta/                # exp006 + TTA
+│   ├── exp008_kfold_384/                # 5-Fold, 384 해상도
+│   └── exp009_efficientnet_kfold/       # EfficientNet-B3 5-Fold
+└── .venv/                               # 가상환경
 ```
+
+## 완료된 단계
+
+- [x] ResNet50 baseline
+- [x] Multi-View 실험
+- [x] ConvNeXt-Small backbone 변경
+- [x] K-Fold CV + 앙상블
+- [x] TTA (Test Time Augmentation)
+- [x] 해상도 증가 (384px)
+- [x] 다중 아키텍처 앙상블 (EfficientNet)
 
 ## 다음 단계
 
-- [ ] ConvNeXt + Multi-View (front + top)
-- [ ] 더 큰 backbone (ConvNeXt-Base, EVA-02)
-- [ ] K-Fold CV + 앙상블
-- [ ] TTA (Test Time Augmentation)
+- [ ] ConvNeXt 하이퍼파라미터 튜닝 (에폭, LR 등)
+- [ ] 영상 데이터 활용 (프레임 분석)
 - [ ] 확률 보정 (Temperature Scaling)
+- [ ] Dacon 제출 (exp006/007)
