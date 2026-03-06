@@ -2,20 +2,23 @@
 
 ## 실험 요약
 
-| 실험 | 모델 | 방식 | CV/Dev LogLoss | 순위 |
-|------|------|------|---------------|------|
-| exp001 | ResNet50 | 단일, front | 0.4178 | 70등 |
+| 실험 | 모델 | 방식 | CV LogLoss | Dacon 점수 |
+|------|------|------|-----------|-----------|
+| exp001 | ResNet50 | 단일, front | 0.4178 | 0.5016 (70등) |
 | exp002 | ResNet50 | 멀티뷰 front+top | 0.5956 | 미제출 |
-| exp003 | ConvNeXt-Small | 단일, front | 0.1239 | 31등 |
+| exp003 | ConvNeXt-Small | 단일, front | 0.1239 | 0.1304 (31등) |
 | exp004 | ConvNeXt-Small | exp003 + TTA | - | 미제출 |
 | exp005 | ConvNeXt-Base | 단일, front | 0.1963 | 미제출 |
-| **exp006** | **ConvNeXt-Small** | **5-Fold 앙상블** | **0.0522** | **미제출** |
+| exp006 | ConvNeXt-Small | 5-Fold 앙상블 | 0.0522 | 미제출 |
 | exp007 | ConvNeXt-Small | exp006 + TTA | - | 미제출 |
 | exp008 | ConvNeXt-Small | 5-Fold, 384px | 0.0622 | 미제출 |
 | exp009 | EfficientNet-B3 | 5-Fold, 300px | 0.0767 | 미제출 |
+| exp010 | ConvNeXt-Small | 10-Fold x 3-Seed | 0.0524 | 0.1111 |
+| exp011 | ConvNeXt-Small | **듀얼뷰 (front+top)** | 0.0490 | 미제출 |
+| **exp012** | **ConvNeXt-Small** | **듀얼뷰 + Pseudo + TempScale** | **0.0472** | **0.0400** |
 
 - 1등 점수: 0.01062
-- 현재 최고: exp006 (CV 0.0522)
+- **현재 최고: exp012 (Dacon 0.0400)**
 - 각 실험의 상세 기록은 `experiments/exp00X/config.md` 참조.
 
 ---
@@ -30,6 +33,10 @@
 6. **K-Fold 앙상블이 큰 효과**: 단일 모델 0.1239 → 5-Fold 0.0522 (58% 개선)
 7. **큰 모델/해상도가 항상 좋진 않음**: ConvNeXt-Base(0.1963), 384px(0.0622) 모두 Small 224보다 나쁨
 8. **다중 아키텍처 앙상블은 성능 차이가 크면 역효과**: EfficientNet(0.0767)을 섞으면 오히려 하락
+9. **듀얼 뷰(front+top)가 효과적**: side-by-side로 붙이면 단일 backbone으로 두 뷰 관계 학습 가능
+10. **Pseudo-Labeling으로 도메인 갭 해결**: test 데이터 847개를 가짜 라벨로 추가 → 1,100→1,947 (77% 증가)
+11. **Temperature Scaling이 LogLoss에 큰 효과**: 확률 보정만으로 Dacon 점수 대폭 개선
+12. **CV와 Dacon 점수 사이에 갭 존재**: CV 0.0472 vs Dacon 0.0400 — 도메인 갭 줄이면 실제 점수가 더 좋을 수 있음
 
 ## 환경 정보
 
@@ -57,23 +64,31 @@ dacon/
 │   ├── exp006_kfold_ensemble/           # 5-Fold ConvNeXt-Small ★ 최고
 │   ├── exp007_kfold_tta/                # exp006 + TTA
 │   ├── exp008_kfold_384/                # 5-Fold, 384 해상도
-│   └── exp009_efficientnet_kfold/       # EfficientNet-B3 5-Fold
+│   ├── exp009_efficientnet_kfold/       # EfficientNet-B3 5-Fold
+│   ├── exp010_10fold_seed_ensemble/     # 10-Fold x 3-Seed
+│   ├── exp011_dualview_physics/         # 듀얼뷰 (front+top)
+│   └── exp012_calibration_pseudo/       # Pseudo-Label + Temperature Scaling ★ 최고
 └── .venv/                               # 가상환경
 ```
 
 ## 완료된 단계
 
-- [x] ResNet50 baseline
-- [x] Multi-View 실험
-- [x] ConvNeXt-Small backbone 변경
-- [x] K-Fold CV + 앙상블
-- [x] TTA (Test Time Augmentation)
-- [x] 해상도 증가 (384px)
-- [x] 다중 아키텍처 앙상블 (EfficientNet)
+- [x] ResNet50 baseline (exp001)
+- [x] Multi-View 실험 (exp002)
+- [x] ConvNeXt-Small backbone 변경 (exp003)
+- [x] TTA (exp004)
+- [x] ConvNeXt-Base 시도 (exp005, 실패)
+- [x] K-Fold CV + 앙상블 (exp006)
+- [x] K-Fold + TTA (exp007)
+- [x] 해상도 384px (exp008)
+- [x] 다중 아키텍처 앙상블 EfficientNet (exp009, 효과 없음)
+- [x] 10-Fold x 3-Seed (exp010)
+- [x] 듀얼 뷰 front+top (exp011)
+- [x] Temperature Scaling + Pseudo-Labeling (exp012)
 
 ## 다음 단계
 
-- [ ] ConvNeXt 하이퍼파라미터 튜닝 (에폭, LR 등)
-- [ ] 영상 데이터 활용 (프레임 분석)
-- [ ] 확률 보정 (Temperature Scaling)
-- [ ] Dacon 제출 (exp006/007)
+- [ ] 다른 Temperature 값 제출 비교 (T=0.5, 0.8)
+- [ ] Pseudo-Label 2라운드 (exp012 모델로 다시 pseudo → 재학습)
+- [ ] 영상 멀티프레임 학습 데이터 증강
+- [ ] 6채널 입력 (front RGB + top RGB)
