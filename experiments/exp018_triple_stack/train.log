@@ -15,72 +15,675 @@ Device: cuda:0
   ConvNeXt fold 4/5 done
   ConvNeXt fold 5/5 done
 
-Threshold 0.85: 926/1000 selected (unstable: 467, stable: 459)
+Threshold 0.85: 928/1000 selected (unstable: 467, stable: 461)
 
-Threshold 0.9: 891/1000 selected (unstable: 448, stable: 443)
+Threshold 0.9: 890/1000 selected (unstable: 448, stable: 442)
 
-Threshold 0.95: 644/1000 selected (unstable: 325, stable: 319)
+Threshold 0.95: 640/1000 selected (unstable: 322, stable: 318)
 
-Saved 926 pseudo labels to /home/pascal/Ora/kimjunhee/workspace/dacon/experiments/exp018_triple_stack/pseudo_labels_round2.csv
+Saved 928 pseudo labels to /home/pascal/Ora/kimjunhee/workspace/dacon/experiments/exp018_triple_stack/pseudo_labels_round2.csv
 
 ===== Step 2: Train 3 Architectures =====
 Device: cuda:0
-Real: 1100, Pseudo R2: 926
+Real: 1100, Pseudo R2: 928
 
 ============================================================
 Training: convnext (convnext_small.fb_in22k_ft_in1k)
 ============================================================
 
 --- Fold 1/5 ---
-Train: 5018, Val: 220
-[Epoch 01/40] Train Loss: 0.2991 Acc: 0.9396 | Val LogLoss: 0.0852 Acc: 0.9818
-  -> Best model saved! (LogLoss: 0.0852)
-[Epoch 02/40] Train Loss: 0.2281 Acc: 0.9841 | Val LogLoss: 0.0624 Acc: 0.9955
-  -> Best model saved! (LogLoss: 0.0624)
-[Epoch 03/40] Train Loss: 0.2241 Acc: 0.9890 | Val LogLoss: 0.0617 Acc: 0.9955
-  -> Best model saved! (LogLoss: 0.0617)
-[Epoch 04/40] Train Loss: 0.2127 Acc: 0.9940 | Val LogLoss: 0.0466 Acc: 1.0000
-  -> Best model saved! (LogLoss: 0.0466)
-[Epoch 05/40] Train Loss: 0.2227 Acc: 0.9874 | Val LogLoss: 0.0630 Acc: 0.9955
-[Epoch 06/40] Train Loss: 0.2118 Acc: 0.9932 | Val LogLoss: 0.0616 Acc: 0.9955
-[Epoch 07/40] Train Loss: 0.2090 Acc: 0.9948 | Val LogLoss: 0.0619 Acc: 0.9955
-[Epoch 08/40] Train Loss: 0.2035 Acc: 0.9980 | Val LogLoss: 0.0682 Acc: 0.9955
-[Epoch 09/40] Train Loss: 0.2076 Acc: 0.9952 | Val LogLoss: 0.0659 Acc: 0.9955
-[Epoch 10/40] Train Loss: 0.2117 Acc: 0.9940 | Val LogLoss: 0.0526 Acc: 0.9955
-[Epoch 11/40] Train Loss: 0.2073 Acc: 0.9954 | Val LogLoss: 0.0581 Acc: 0.9955
-[Epoch 12/40] Train Loss: 0.2074 Acc: 0.9962 | Val LogLoss: 0.0638 Acc: 0.9955
-[Epoch 13/40] Train Loss: 0.2050 Acc: 0.9970 | Val LogLoss: 0.0595 Acc: 0.9955
-[Epoch 14/40] Train Loss: 0.2078 Acc: 0.9948 | Val LogLoss: 0.0526 Acc: 1.0000
-[Epoch 15/40] Train Loss: 0.2052 Acc: 0.9976 | Val LogLoss: 0.0526 Acc: 0.9955
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-[Epoch 16/40] Train Loss: 0.2056 Acc: 0.9968 | Val LogLoss: 0.0594 Acc: 0.9955
+Train: 5020, Val: 220
+[Epoch 01/40] Train Loss: 0.3006 Acc: 0.9375 | Val LogLoss: 0.0648 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0648)
+[Epoch 02/40] Train Loss: 0.2329 Acc: 0.9805 | Val LogLoss: 0.1078 Acc: 0.9727
+[Epoch 03/40] Train Loss: 0.2277 Acc: 0.9871 | Val LogLoss: 0.0878 Acc: 0.9955
+[Epoch 04/40] Train Loss: 0.2205 Acc: 0.9894 | Val LogLoss: 0.0493 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0493)
+[Epoch 05/40] Train Loss: 0.2213 Acc: 0.9888 | Val LogLoss: 0.0584 Acc: 1.0000
+[Epoch 06/40] Train Loss: 0.2155 Acc: 0.9910 | Val LogLoss: 0.0679 Acc: 0.9909
+[Epoch 07/40] Train Loss: 0.2116 Acc: 0.9944 | Val LogLoss: 0.0692 Acc: 0.9955
+[Epoch 08/40] Train Loss: 0.2094 Acc: 0.9940 | Val LogLoss: 0.0607 Acc: 0.9955
+[Epoch 09/40] Train Loss: 0.2070 Acc: 0.9958 | Val LogLoss: 0.0648 Acc: 0.9955
+[Epoch 10/40] Train Loss: 0.2062 Acc: 0.9964 | Val LogLoss: 0.0662 Acc: 0.9955
+[Epoch 11/40] Train Loss: 0.2087 Acc: 0.9958 | Val LogLoss: 0.0501 Acc: 1.0000
+[Epoch 12/40] Train Loss: 0.2054 Acc: 0.9974 | Val LogLoss: 0.0543 Acc: 0.9955
+[Epoch 13/40] Train Loss: 0.2078 Acc: 0.9958 | Val LogLoss: 0.0656 Acc: 0.9955
+[Epoch 14/40] Train Loss: 0.2090 Acc: 0.9950 | Val LogLoss: 0.0504 Acc: 1.0000
+[Epoch 15/40] Train Loss: 0.2052 Acc: 0.9974 | Val LogLoss: 0.0501 Acc: 1.0000
+[Epoch 16/40] Train Loss: 0.2042 Acc: 0.9972 | Val LogLoss: 0.0557 Acc: 1.0000
   -> Early stopping at epoch 16
-Fold 1 complete. Best: 0.0466
+Fold 1 complete. Best: 0.0493
 
 --- Fold 2/5 ---
-Train: 5002, Val: 220
-[Epoch 01/40] Train Loss: 0.2754 Acc: 0.9522 | Val LogLoss: 0.0871 Acc: 0.9818
-  -> Best model saved! (LogLoss: 0.0871)
-[Epoch 02/40] Train Loss: 0.2245 Acc: 0.9882 | Val LogLoss: 0.0554 Acc: 1.0000
-  -> Best model saved! (LogLoss: 0.0554)
-[Epoch 03/40] Train Loss: 0.2232 Acc: 0.9878 | Val LogLoss: 0.0595 Acc: 1.0000
-[Epoch 04/40] Train Loss: 0.2177 Acc: 0.9912 | Val LogLoss: 0.0594 Acc: 0.9909
-[Epoch 05/40] Train Loss: 0.2111 Acc: 0.9936 | Val LogLoss: 0.0604 Acc: 1.0000
-[Epoch 06/40] Train Loss: 0.2136 Acc: 0.9926 | Val LogLoss: 0.0528 Acc: 1.0000
-  -> Best model saved! (LogLoss: 0.0528)
-[Epoch 07/40] Train Loss: 0.2137 Acc: 0.9920 | Val LogLoss: 0.0486 Acc: 1.0000
-  -> Best model saved! (LogLoss: 0.0486)
-[Epoch 08/40] Train Loss: 0.2077 Acc: 0.9956 | Val LogLoss: 0.0540 Acc: 1.0000
-[Epoch 09/40] Train Loss: 0.2092 Acc: 0.9956 | Val LogLoss: 0.0498 Acc: 1.0000
-[Epoch 10/40] Train Loss: 0.2116 Acc: 0.9930 | Val LogLoss: 0.0565 Acc: 1.0000
-[Epoch 11/40] Train Loss: 0.2084 Acc: 0.9952 | Val LogLoss: 0.0482 Acc: 1.0000
-  -> Best model saved! (LogLoss: 0.0482)
-[Epoch 12/40] Train Loss: 0.2066 Acc: 0.9966 | Val LogLoss: 0.0536 Acc: 1.0000
-[Epoch 13/40] Train Loss: 0.2086 Acc: 0.9948 | Val LogLoss: 0.0508 Acc: 1.0000
-[Epoch 14/40] Train Loss: 0.2064 Acc: 0.9962 | Val LogLoss: 0.0598 Acc: 0.9955
-[Epoch 15/40] Train Loss: 0.2058 Acc: 0.9970 | Val LogLoss: 0.0501 Acc: 1.0000
-[Epoch 16/40] Train Loss: 0.2041 Acc: 0.9974 | Val LogLoss: 0.0530 Acc: 1.0000
-[Epoch 17/40] Train Loss: 0.2025 Acc: 0.9984 | Val LogLoss: 0.0555 Acc: 1.0000
-[Epoch 18/40] Train Loss: 0.2016 Acc: 0.9990 | Val LogLoss: 0.0539 Acc: 1.0000
-[Epoch 19/40] Train Loss: 0.2015 Acc: 0.9992 | Val LogLoss: 0.0502 Acc: 1.0000
-[Epoch 20/40] Train Loss: 0.2040 Acc: 0.9970 | Val LogLoss: 0.0558 Acc: 1.0000
+Train: 5004, Val: 220
+[Epoch 01/40] Train Loss: 0.2872 Acc: 0.9430 | Val LogLoss: 0.0488 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0488)
+[Epoch 02/40] Train Loss: 0.2318 Acc: 0.9824 | Val LogLoss: 0.0504 Acc: 1.0000
+[Epoch 03/40] Train Loss: 0.2213 Acc: 0.9882 | Val LogLoss: 0.0530 Acc: 1.0000
+[Epoch 04/40] Train Loss: 0.2212 Acc: 0.9888 | Val LogLoss: 0.1011 Acc: 0.9773
+[Epoch 05/40] Train Loss: 0.2210 Acc: 0.9902 | Val LogLoss: 0.0609 Acc: 1.0000
+[Epoch 06/40] Train Loss: 0.2114 Acc: 0.9948 | Val LogLoss: 0.0550 Acc: 1.0000
+[Epoch 07/40] Train Loss: 0.2143 Acc: 0.9924 | Val LogLoss: 0.0453 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0453)
+[Epoch 08/40] Train Loss: 0.2057 Acc: 0.9974 | Val LogLoss: 0.0542 Acc: 1.0000
+[Epoch 09/40] Train Loss: 0.2104 Acc: 0.9942 | Val LogLoss: 0.0580 Acc: 1.0000
+[Epoch 10/40] Train Loss: 0.2084 Acc: 0.9956 | Val LogLoss: 0.0496 Acc: 1.0000
+[Epoch 11/40] Train Loss: 0.2027 Acc: 0.9990 | Val LogLoss: 0.0518 Acc: 1.0000
+[Epoch 12/40] Train Loss: 0.2052 Acc: 0.9970 | Val LogLoss: 0.0490 Acc: 1.0000
+[Epoch 13/40] Train Loss: 0.2098 Acc: 0.9940 | Val LogLoss: 0.0436 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0436)
+[Epoch 14/40] Train Loss: 0.2087 Acc: 0.9952 | Val LogLoss: 0.0402 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0402)
+[Epoch 15/40] Train Loss: 0.2064 Acc: 0.9964 | Val LogLoss: 0.0470 Acc: 1.0000
+[Epoch 16/40] Train Loss: 0.2041 Acc: 0.9978 | Val LogLoss: 0.0546 Acc: 1.0000
+[Epoch 17/40] Train Loss: 0.2052 Acc: 0.9962 | Val LogLoss: 0.0533 Acc: 1.0000
+[Epoch 18/40] Train Loss: 0.2037 Acc: 0.9980 | Val LogLoss: 0.0531 Acc: 1.0000
+[Epoch 19/40] Train Loss: 0.2032 Acc: 0.9980 | Val LogLoss: 0.0484 Acc: 1.0000
+[Epoch 20/40] Train Loss: 0.2028 Acc: 0.9978 | Val LogLoss: 0.0512 Acc: 1.0000
+[Epoch 21/40] Train Loss: 0.2026 Acc: 0.9986 | Val LogLoss: 0.0491 Acc: 1.0000
+[Epoch 22/40] Train Loss: 0.2024 Acc: 0.9986 | Val LogLoss: 0.0525 Acc: 1.0000
+[Epoch 23/40] Train Loss: 0.2016 Acc: 0.9986 | Val LogLoss: 0.0508 Acc: 1.0000
+[Epoch 24/40] Train Loss: 0.2022 Acc: 0.9980 | Val LogLoss: 0.0563 Acc: 1.0000
+[Epoch 25/40] Train Loss: 0.2034 Acc: 0.9972 | Val LogLoss: 0.0523 Acc: 1.0000
+[Epoch 26/40] Train Loss: 0.2007 Acc: 0.9990 | Val LogLoss: 0.0511 Acc: 1.0000
+  -> Early stopping at epoch 26
+Fold 2 complete. Best: 0.0402
+
+--- Fold 3/5 ---
+Train: 5000, Val: 220
+[Epoch 01/40] Train Loss: 0.3009 Acc: 0.9350 | Val LogLoss: 0.0548 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0548)
+[Epoch 02/40] Train Loss: 0.2251 Acc: 0.9876 | Val LogLoss: 0.0635 Acc: 1.0000
+[Epoch 03/40] Train Loss: 0.2159 Acc: 0.9926 | Val LogLoss: 0.0479 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0479)
+[Epoch 04/40] Train Loss: 0.2155 Acc: 0.9912 | Val LogLoss: 0.0949 Acc: 0.9818
+[Epoch 05/40] Train Loss: 0.2203 Acc: 0.9882 | Val LogLoss: 0.0607 Acc: 0.9955
+[Epoch 06/40] Train Loss: 0.2190 Acc: 0.9898 | Val LogLoss: 0.0529 Acc: 1.0000
+[Epoch 07/40] Train Loss: 0.2099 Acc: 0.9946 | Val LogLoss: 0.0582 Acc: 1.0000
+[Epoch 08/40] Train Loss: 0.2057 Acc: 0.9972 | Val LogLoss: 0.0577 Acc: 1.0000
+[Epoch 09/40] Train Loss: 0.2046 Acc: 0.9976 | Val LogLoss: 0.0501 Acc: 1.0000
+[Epoch 10/40] Train Loss: 0.2085 Acc: 0.9956 | Val LogLoss: 0.0839 Acc: 1.0000
+[Epoch 11/40] Train Loss: 0.2124 Acc: 0.9930 | Val LogLoss: 0.0589 Acc: 0.9909
+[Epoch 12/40] Train Loss: 0.2086 Acc: 0.9956 | Val LogLoss: 0.0585 Acc: 1.0000
+[Epoch 13/40] Train Loss: 0.2051 Acc: 0.9974 | Val LogLoss: 0.0550 Acc: 1.0000
+[Epoch 14/40] Train Loss: 0.2084 Acc: 0.9954 | Val LogLoss: 0.0534 Acc: 1.0000
+[Epoch 15/40] Train Loss: 0.2062 Acc: 0.9970 | Val LogLoss: 0.0526 Acc: 1.0000
+  -> Early stopping at epoch 15
+Fold 3 complete. Best: 0.0479
+
+--- Fold 4/5 ---
+Train: 5000, Val: 220
+[Epoch 01/40] Train Loss: 0.2902 Acc: 0.9460 | Val LogLoss: 0.0553 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0553)
+[Epoch 02/40] Train Loss: 0.2376 Acc: 0.9808 | Val LogLoss: 0.0638 Acc: 1.0000
+[Epoch 03/40] Train Loss: 0.2152 Acc: 0.9926 | Val LogLoss: 0.0582 Acc: 0.9909
+[Epoch 04/40] Train Loss: 0.2168 Acc: 0.9914 | Val LogLoss: 0.0569 Acc: 1.0000
+[Epoch 05/40] Train Loss: 0.2171 Acc: 0.9906 | Val LogLoss: 0.0552 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0552)
+[Epoch 06/40] Train Loss: 0.2120 Acc: 0.9942 | Val LogLoss: 0.0490 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0490)
+[Epoch 07/40] Train Loss: 0.2111 Acc: 0.9934 | Val LogLoss: 0.0535 Acc: 1.0000
+[Epoch 08/40] Train Loss: 0.2059 Acc: 0.9974 | Val LogLoss: 0.0662 Acc: 0.9955
+[Epoch 09/40] Train Loss: 0.2101 Acc: 0.9940 | Val LogLoss: 0.0681 Acc: 0.9955
+[Epoch 10/40] Train Loss: 0.2094 Acc: 0.9934 | Val LogLoss: 0.0564 Acc: 1.0000
+[Epoch 11/40] Train Loss: 0.2075 Acc: 0.9956 | Val LogLoss: 0.0542 Acc: 1.0000
+[Epoch 12/40] Train Loss: 0.2049 Acc: 0.9968 | Val LogLoss: 0.0547 Acc: 1.0000
+[Epoch 13/40] Train Loss: 0.2065 Acc: 0.9964 | Val LogLoss: 0.0501 Acc: 1.0000
+[Epoch 14/40] Train Loss: 0.2077 Acc: 0.9960 | Val LogLoss: 0.0531 Acc: 1.0000
+[Epoch 15/40] Train Loss: 0.2104 Acc: 0.9938 | Val LogLoss: 0.0541 Acc: 1.0000
+[Epoch 16/40] Train Loss: 0.2058 Acc: 0.9972 | Val LogLoss: 0.0616 Acc: 0.9955
+[Epoch 17/40] Train Loss: 0.2041 Acc: 0.9978 | Val LogLoss: 0.0529 Acc: 1.0000
+[Epoch 18/40] Train Loss: 0.2046 Acc: 0.9970 | Val LogLoss: 0.0520 Acc: 1.0000
+  -> Early stopping at epoch 18
+Fold 4 complete. Best: 0.0490
+
+--- Fold 5/5 ---
+Train: 5016, Val: 220
+[Epoch 01/40] Train Loss: 0.2890 Acc: 0.9442 | Val LogLoss: 0.0577 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0577)
+[Epoch 02/40] Train Loss: 0.2271 Acc: 0.9843 | Val LogLoss: 0.0509 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0509)
+[Epoch 03/40] Train Loss: 0.2236 Acc: 0.9886 | Val LogLoss: 0.0675 Acc: 0.9909
+[Epoch 04/40] Train Loss: 0.2179 Acc: 0.9894 | Val LogLoss: 0.0642 Acc: 0.9955
+[Epoch 05/40] Train Loss: 0.2082 Acc: 0.9962 | Val LogLoss: 0.0728 Acc: 0.9955
+[Epoch 06/40] Train Loss: 0.2191 Acc: 0.9892 | Val LogLoss: 0.0657 Acc: 0.9955
+[Epoch 07/40] Train Loss: 0.2109 Acc: 0.9942 | Val LogLoss: 0.0553 Acc: 1.0000
+[Epoch 08/40] Train Loss: 0.2111 Acc: 0.9932 | Val LogLoss: 0.0516 Acc: 1.0000
+[Epoch 09/40] Train Loss: 0.2071 Acc: 0.9966 | Val LogLoss: 0.0542 Acc: 1.0000
+[Epoch 10/40] Train Loss: 0.2095 Acc: 0.9950 | Val LogLoss: 0.0531 Acc: 1.0000
+[Epoch 11/40] Train Loss: 0.2083 Acc: 0.9958 | Val LogLoss: 0.0499 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0499)
+[Epoch 12/40] Train Loss: 0.2059 Acc: 0.9968 | Val LogLoss: 0.0511 Acc: 1.0000
+[Epoch 13/40] Train Loss: 0.2042 Acc: 0.9980 | Val LogLoss: 0.0584 Acc: 1.0000
+[Epoch 14/40] Train Loss: 0.2115 Acc: 0.9928 | Val LogLoss: 0.0459 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0459)
+[Epoch 15/40] Train Loss: 0.2024 Acc: 0.9986 | Val LogLoss: 0.0511 Acc: 1.0000
+[Epoch 16/40] Train Loss: 0.2030 Acc: 0.9980 | Val LogLoss: 0.0491 Acc: 1.0000
+[Epoch 17/40] Train Loss: 0.2019 Acc: 0.9988 | Val LogLoss: 0.0506 Acc: 1.0000
+[Epoch 18/40] Train Loss: 0.2023 Acc: 0.9978 | Val LogLoss: 0.0511 Acc: 1.0000
+[Epoch 19/40] Train Loss: 0.2071 Acc: 0.9946 | Val LogLoss: 0.0530 Acc: 1.0000
+[Epoch 20/40] Train Loss: 0.2022 Acc: 0.9982 | Val LogLoss: 0.0576 Acc: 1.0000
+[Epoch 21/40] Train Loss: 0.2027 Acc: 0.9984 | Val LogLoss: 0.0562 Acc: 1.0000
+[Epoch 22/40] Train Loss: 0.2037 Acc: 0.9976 | Val LogLoss: 0.0538 Acc: 1.0000
+[Epoch 23/40] Train Loss: 0.2038 Acc: 0.9976 | Val LogLoss: 0.0496 Acc: 1.0000
+[Epoch 24/40] Train Loss: 0.2032 Acc: 0.9972 | Val LogLoss: 0.0500 Acc: 1.0000
+[Epoch 25/40] Train Loss: 0.2011 Acc: 0.9992 | Val LogLoss: 0.0564 Acc: 0.9955
+[Epoch 26/40] Train Loss: 0.2013 Acc: 0.9992 | Val LogLoss: 0.0532 Acc: 1.0000
+  -> Early stopping at epoch 26
+Fold 5 complete. Best: 0.0459
+
+convnext complete! Folds: [np.float16(0.04926), np.float16(0.04022), np.float16(0.0479), np.float16(0.049), np.float16(0.0459)], Mean: 0.0464
+
+============================================================
+Training: swin (swin_base_patch4_window7_224)
+============================================================
+
+--- Fold 1/5 ---
+Train: 5020, Val: 220
+[Epoch 01/40] Train Loss: 0.3054 Acc: 0.9347 | Val LogLoss: 0.0988 Acc: 0.9818
+  -> Best model saved! (LogLoss: 0.0988)
+[Epoch 02/40] Train Loss: 0.2403 Acc: 0.9799 | Val LogLoss: 0.0917 Acc: 0.9773
+  -> Best model saved! (LogLoss: 0.0917)
+[Epoch 03/40] Train Loss: 0.2254 Acc: 0.9857 | Val LogLoss: 0.0547 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0547)
+[Epoch 04/40] Train Loss: 0.2341 Acc: 0.9825 | Val LogLoss: 0.0580 Acc: 0.9955
+[Epoch 05/40] Train Loss: 0.2211 Acc: 0.9888 | Val LogLoss: 0.0649 Acc: 0.9955
+[Epoch 06/40] Train Loss: 0.2227 Acc: 0.9878 | Val LogLoss: 0.0667 Acc: 0.9955
+[Epoch 07/40] Train Loss: 0.2228 Acc: 0.9873 | Val LogLoss: 0.0616 Acc: 0.9955
+[Epoch 08/40] Train Loss: 0.2112 Acc: 0.9942 | Val LogLoss: 0.0671 Acc: 0.9955
+[Epoch 09/40] Train Loss: 0.2106 Acc: 0.9944 | Val LogLoss: 0.0603 Acc: 0.9955
+[Epoch 10/40] Train Loss: 0.2122 Acc: 0.9936 | Val LogLoss: 0.0638 Acc: 0.9955
+[Epoch 11/40] Train Loss: 0.2105 Acc: 0.9930 | Val LogLoss: 0.0606 Acc: 0.9955
+[Epoch 12/40] Train Loss: 0.2113 Acc: 0.9936 | Val LogLoss: 0.0514 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0514)
+[Epoch 13/40] Train Loss: 0.2085 Acc: 0.9952 | Val LogLoss: 0.0497 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0497)
+[Epoch 14/40] Train Loss: 0.2074 Acc: 0.9950 | Val LogLoss: 0.0625 Acc: 0.9955
+[Epoch 15/40] Train Loss: 0.2072 Acc: 0.9956 | Val LogLoss: 0.0594 Acc: 0.9955
+[Epoch 16/40] Train Loss: 0.2084 Acc: 0.9954 | Val LogLoss: 0.0585 Acc: 0.9955
+[Epoch 17/40] Train Loss: 0.2063 Acc: 0.9958 | Val LogLoss: 0.0547 Acc: 0.9955
+[Epoch 18/40] Train Loss: 0.2065 Acc: 0.9958 | Val LogLoss: 0.0645 Acc: 0.9955
+[Epoch 19/40] Train Loss: 0.2049 Acc: 0.9976 | Val LogLoss: 0.0590 Acc: 0.9955
+[Epoch 20/40] Train Loss: 0.2037 Acc: 0.9980 | Val LogLoss: 0.0599 Acc: 0.9955
+[Epoch 21/40] Train Loss: 0.2074 Acc: 0.9950 | Val LogLoss: 0.0581 Acc: 0.9955
+[Epoch 22/40] Train Loss: 0.2063 Acc: 0.9958 | Val LogLoss: 0.0545 Acc: 0.9955
+[Epoch 23/40] Train Loss: 0.2039 Acc: 0.9978 | Val LogLoss: 0.0604 Acc: 0.9955
+[Epoch 24/40] Train Loss: 0.2029 Acc: 0.9986 | Val LogLoss: 0.0646 Acc: 0.9955
+[Epoch 25/40] Train Loss: 0.2059 Acc: 0.9960 | Val LogLoss: 0.0526 Acc: 0.9955
+  -> Early stopping at epoch 25
+Fold 1 complete. Best: 0.0497
+
+--- Fold 2/5 ---
+Train: 5004, Val: 220
+[Epoch 01/40] Train Loss: 0.3034 Acc: 0.9398 | Val LogLoss: 0.0497 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0497)
+[Epoch 02/40] Train Loss: 0.2397 Acc: 0.9782 | Val LogLoss: 0.0692 Acc: 1.0000
+[Epoch 03/40] Train Loss: 0.2327 Acc: 0.9834 | Val LogLoss: 0.0447 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0447)
+[Epoch 04/40] Train Loss: 0.2251 Acc: 0.9874 | Val LogLoss: 0.0516 Acc: 1.0000
+[Epoch 05/40] Train Loss: 0.2223 Acc: 0.9888 | Val LogLoss: 0.0592 Acc: 1.0000
+[Epoch 06/40] Train Loss: 0.2271 Acc: 0.9844 | Val LogLoss: 0.0579 Acc: 1.0000
+[Epoch 07/40] Train Loss: 0.2111 Acc: 0.9944 | Val LogLoss: 0.0514 Acc: 1.0000
+[Epoch 08/40] Train Loss: 0.2101 Acc: 0.9950 | Val LogLoss: 0.0549 Acc: 1.0000
+[Epoch 09/40] Train Loss: 0.2228 Acc: 0.9882 | Val LogLoss: 0.0540 Acc: 0.9955
+[Epoch 10/40] Train Loss: 0.2133 Acc: 0.9926 | Val LogLoss: 0.0591 Acc: 1.0000
+[Epoch 11/40] Train Loss: 0.2117 Acc: 0.9936 | Val LogLoss: 0.0552 Acc: 1.0000
+[Epoch 12/40] Train Loss: 0.2071 Acc: 0.9962 | Val LogLoss: 0.0453 Acc: 1.0000
+[Epoch 13/40] Train Loss: 0.2094 Acc: 0.9948 | Val LogLoss: 0.0469 Acc: 1.0000
+[Epoch 14/40] Train Loss: 0.2069 Acc: 0.9960 | Val LogLoss: 0.0563 Acc: 1.0000
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[Epoch 15/40] Train Loss: 0.2085 Acc: 0.9956 | Val LogLoss: 0.0458 Acc: 1.0000
+  -> Early stopping at epoch 15
+Fold 2 complete. Best: 0.0447
+
+--- Fold 3/5 ---
+Train: 5000, Val: 220
+[Epoch 01/40] Train Loss: 0.3139 Acc: 0.9304 | Val LogLoss: 0.0640 Acc: 0.9818
+  -> Best model saved! (LogLoss: 0.0640)
+[Epoch 02/40] Train Loss: 0.2348 Acc: 0.9816 | Val LogLoss: 0.0477 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0477)
+[Epoch 03/40] Train Loss: 0.2356 Acc: 0.9826 | Val LogLoss: 0.1154 Acc: 0.9682
+[Epoch 04/40] Train Loss: 0.2254 Acc: 0.9866 | Val LogLoss: 0.0527 Acc: 0.9955
+[Epoch 05/40] Train Loss: 0.2277 Acc: 0.9834 | Val LogLoss: 0.0387 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0387)
+[Epoch 06/40] Train Loss: 0.2198 Acc: 0.9896 | Val LogLoss: 0.0569 Acc: 0.9955
+[Epoch 07/40] Train Loss: 0.2170 Acc: 0.9916 | Val LogLoss: 0.0597 Acc: 0.9955
+[Epoch 08/40] Train Loss: 0.2209 Acc: 0.9886 | Val LogLoss: 0.0510 Acc: 1.0000
+[Epoch 09/40] Train Loss: 0.2158 Acc: 0.9916 | Val LogLoss: 0.0619 Acc: 0.9955
+[Epoch 10/40] Train Loss: 0.2092 Acc: 0.9954 | Val LogLoss: 0.0533 Acc: 1.0000
+[Epoch 11/40] Train Loss: 0.2103 Acc: 0.9940 | Val LogLoss: 0.0855 Acc: 0.9773
+[Epoch 12/40] Train Loss: 0.2150 Acc: 0.9916 | Val LogLoss: 0.0529 Acc: 1.0000
+[Epoch 13/40] Train Loss: 0.2105 Acc: 0.9940 | Val LogLoss: 0.0555 Acc: 0.9955
+[Epoch 14/40] Train Loss: 0.2123 Acc: 0.9930 | Val LogLoss: 0.0504 Acc: 1.0000
+[Epoch 15/40] Train Loss: 0.2066 Acc: 0.9960 | Val LogLoss: 0.0532 Acc: 0.9955
+[Epoch 16/40] Train Loss: 0.2138 Acc: 0.9918 | Val LogLoss: 0.0605 Acc: 0.9955
+[Epoch 17/40] Train Loss: 0.2062 Acc: 0.9958 | Val LogLoss: 0.0599 Acc: 0.9955
+  -> Early stopping at epoch 17
+Fold 3 complete. Best: 0.0387
+
+--- Fold 4/5 ---
+Train: 5000, Val: 220
+[Epoch 01/40] Train Loss: 0.3058 Acc: 0.9340 | Val LogLoss: 0.0900 Acc: 0.9773
+  -> Best model saved! (LogLoss: 0.0900)
+[Epoch 02/40] Train Loss: 0.2341 Acc: 0.9810 | Val LogLoss: 0.0726 Acc: 0.9909
+  -> Best model saved! (LogLoss: 0.0726)
+[Epoch 03/40] Train Loss: 0.2315 Acc: 0.9830 | Val LogLoss: 0.0639 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0639)
+[Epoch 04/40] Train Loss: 0.2274 Acc: 0.9848 | Val LogLoss: 0.0797 Acc: 0.9864
+[Epoch 05/40] Train Loss: 0.2183 Acc: 0.9912 | Val LogLoss: 0.0717 Acc: 0.9909
+[Epoch 06/40] Train Loss: 0.2176 Acc: 0.9904 | Val LogLoss: 0.0722 Acc: 0.9955
+[Epoch 07/40] Train Loss: 0.2146 Acc: 0.9922 | Val LogLoss: 0.0798 Acc: 0.9864
+[Epoch 08/40] Train Loss: 0.2171 Acc: 0.9904 | Val LogLoss: 0.0631 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0631)
+[Epoch 09/40] Train Loss: 0.2279 Acc: 0.9834 | Val LogLoss: 0.0754 Acc: 0.9864
+[Epoch 10/40] Train Loss: 0.2225 Acc: 0.9876 | Val LogLoss: 0.0624 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0624)
+[Epoch 11/40] Train Loss: 0.2131 Acc: 0.9928 | Val LogLoss: 0.0980 Acc: 0.9773
+[Epoch 12/40] Train Loss: 0.2114 Acc: 0.9932 | Val LogLoss: 0.0523 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0523)
+[Epoch 13/40] Train Loss: 0.2143 Acc: 0.9914 | Val LogLoss: 0.0734 Acc: 0.9909
+[Epoch 14/40] Train Loss: 0.2096 Acc: 0.9946 | Val LogLoss: 0.0584 Acc: 0.9955
+[Epoch 15/40] Train Loss: 0.2090 Acc: 0.9940 | Val LogLoss: 0.0555 Acc: 1.0000
+[Epoch 16/40] Train Loss: 0.2070 Acc: 0.9966 | Val LogLoss: 0.0566 Acc: 0.9955
+[Epoch 17/40] Train Loss: 0.2063 Acc: 0.9966 | Val LogLoss: 0.0504 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0504)
+[Epoch 18/40] Train Loss: 0.2066 Acc: 0.9956 | Val LogLoss: 0.0496 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0496)
+[Epoch 19/40] Train Loss: 0.2062 Acc: 0.9962 | Val LogLoss: 0.0541 Acc: 0.9955
+[Epoch 20/40] Train Loss: 0.2056 Acc: 0.9964 | Val LogLoss: 0.0559 Acc: 0.9955
+[Epoch 21/40] Train Loss: 0.2074 Acc: 0.9956 | Val LogLoss: 0.0540 Acc: 0.9955
+[Epoch 22/40] Train Loss: 0.2036 Acc: 0.9976 | Val LogLoss: 0.0538 Acc: 1.0000
+[Epoch 23/40] Train Loss: 0.2044 Acc: 0.9974 | Val LogLoss: 0.0491 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0491)
+[Epoch 24/40] Train Loss: 0.2028 Acc: 0.9984 | Val LogLoss: 0.0523 Acc: 1.0000
+[Epoch 25/40] Train Loss: 0.2048 Acc: 0.9966 | Val LogLoss: 0.0493 Acc: 1.0000
+[Epoch 26/40] Train Loss: 0.2023 Acc: 0.9988 | Val LogLoss: 0.0514 Acc: 1.0000
+[Epoch 27/40] Train Loss: 0.2021 Acc: 0.9982 | Val LogLoss: 0.0512 Acc: 1.0000
+[Epoch 28/40] Train Loss: 0.2020 Acc: 0.9984 | Val LogLoss: 0.0494 Acc: 1.0000
+[Epoch 29/40] Train Loss: 0.2022 Acc: 0.9986 | Val LogLoss: 0.0477 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0477)
+[Epoch 30/40] Train Loss: 0.2023 Acc: 0.9978 | Val LogLoss: 0.0491 Acc: 1.0000
+[Epoch 31/40] Train Loss: 0.2011 Acc: 0.9990 | Val LogLoss: 0.0497 Acc: 1.0000
+[Epoch 32/40] Train Loss: 0.2020 Acc: 0.9986 | Val LogLoss: 0.0488 Acc: 1.0000
+[Epoch 33/40] Train Loss: 0.2012 Acc: 0.9990 | Val LogLoss: 0.0504 Acc: 1.0000
+[Epoch 34/40] Train Loss: 0.2011 Acc: 0.9990 | Val LogLoss: 0.0500 Acc: 1.0000
+[Epoch 35/40] Train Loss: 0.2003 Acc: 0.9996 | Val LogLoss: 0.0507 Acc: 1.0000
+[Epoch 36/40] Train Loss: 0.2012 Acc: 0.9990 | Val LogLoss: 0.0504 Acc: 1.0000
+[Epoch 37/40] Train Loss: 0.2016 Acc: 0.9990 | Val LogLoss: 0.0503 Acc: 1.0000
+[Epoch 38/40] Train Loss: 0.2011 Acc: 0.9990 | Val LogLoss: 0.0501 Acc: 1.0000
+[Epoch 39/40] Train Loss: 0.2000 Acc: 1.0000 | Val LogLoss: 0.0499 Acc: 1.0000
+[Epoch 40/40] Train Loss: 0.2007 Acc: 0.9992 | Val LogLoss: 0.0504 Acc: 1.0000
+Fold 4 complete. Best: 0.0477
+
+--- Fold 5/5 ---
+Train: 5016, Val: 220
+[Epoch 01/40] Train Loss: 0.3158 Acc: 0.9286 | Val LogLoss: 0.0806 Acc: 0.9864
+  -> Best model saved! (LogLoss: 0.0806)
+[Epoch 02/40] Train Loss: 0.2404 Acc: 0.9785 | Val LogLoss: 0.0479 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0479)
+[Epoch 03/40] Train Loss: 0.2241 Acc: 0.9876 | Val LogLoss: 0.0600 Acc: 0.9955
+[Epoch 04/40] Train Loss: 0.2171 Acc: 0.9912 | Val LogLoss: 0.0551 Acc: 1.0000
+[Epoch 05/40] Train Loss: 0.2290 Acc: 0.9833 | Val LogLoss: 0.0506 Acc: 0.9955
+[Epoch 06/40] Train Loss: 0.2174 Acc: 0.9908 | Val LogLoss: 0.0487 Acc: 1.0000
+[Epoch 07/40] Train Loss: 0.2197 Acc: 0.9894 | Val LogLoss: 0.0535 Acc: 1.0000
+[Epoch 08/40] Train Loss: 0.2142 Acc: 0.9920 | Val LogLoss: 0.0479 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0479)
+[Epoch 09/40] Train Loss: 0.2138 Acc: 0.9924 | Val LogLoss: 0.0525 Acc: 0.9955
+[Epoch 10/40] Train Loss: 0.2117 Acc: 0.9944 | Val LogLoss: 0.0534 Acc: 1.0000
+[Epoch 11/40] Train Loss: 0.2117 Acc: 0.9938 | Val LogLoss: 0.0515 Acc: 1.0000
+[Epoch 12/40] Train Loss: 0.2141 Acc: 0.9932 | Val LogLoss: 0.0710 Acc: 0.9909
+[Epoch 13/40] Train Loss: 0.2146 Acc: 0.9910 | Val LogLoss: 0.0498 Acc: 1.0000
+[Epoch 14/40] Train Loss: 0.2122 Acc: 0.9926 | Val LogLoss: 0.0586 Acc: 1.0000
+[Epoch 15/40] Train Loss: 0.2059 Acc: 0.9968 | Val LogLoss: 0.0575 Acc: 1.0000
+[Epoch 16/40] Train Loss: 0.2137 Acc: 0.9934 | Val LogLoss: 0.0488 Acc: 1.0000
+[Epoch 17/40] Train Loss: 0.2084 Acc: 0.9960 | Val LogLoss: 0.0421 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0421)
+[Epoch 18/40] Train Loss: 0.2049 Acc: 0.9968 | Val LogLoss: 0.0492 Acc: 1.0000
+[Epoch 19/40] Train Loss: 0.2033 Acc: 0.9980 | Val LogLoss: 0.0541 Acc: 1.0000
+[Epoch 20/40] Train Loss: 0.2055 Acc: 0.9972 | Val LogLoss: 0.0463 Acc: 1.0000
+[Epoch 21/40] Train Loss: 0.2038 Acc: 0.9980 | Val LogLoss: 0.0514 Acc: 1.0000
+[Epoch 22/40] Train Loss: 0.2048 Acc: 0.9974 | Val LogLoss: 0.0467 Acc: 1.0000
+[Epoch 23/40] Train Loss: 0.2042 Acc: 0.9974 | Val LogLoss: 0.0530 Acc: 1.0000
+[Epoch 24/40] Train Loss: 0.2051 Acc: 0.9972 | Val LogLoss: 0.0481 Acc: 1.0000
+[Epoch 25/40] Train Loss: 0.2037 Acc: 0.9974 | Val LogLoss: 0.0498 Acc: 1.0000
+[Epoch 26/40] Train Loss: 0.2027 Acc: 0.9984 | Val LogLoss: 0.0507 Acc: 1.0000
+[Epoch 27/40] Train Loss: 0.2028 Acc: 0.9982 | Val LogLoss: 0.0504 Acc: 1.0000
+[Epoch 28/40] Train Loss: 0.2010 Acc: 0.9992 | Val LogLoss: 0.0492 Acc: 1.0000
+[Epoch 29/40] Train Loss: 0.2021 Acc: 0.9986 | Val LogLoss: 0.0508 Acc: 1.0000
+  -> Early stopping at epoch 29
+Fold 5 complete. Best: 0.0421
+
+swin complete! Folds: [np.float16(0.04965), np.float16(0.04474), np.float16(0.03873), np.float16(0.04767), np.float16(0.0421)], Mean: 0.0446
+
+============================================================
+Training: eva02 (eva02_small_patch14_336.mim_in22k_ft_in1k)
+============================================================
+
+--- Fold 1/5 ---
+Train: 5020, Val: 220
+[Epoch 01/40] Train Loss: 0.7097 Acc: 0.4900 | Val LogLoss: 0.6934 Acc: 0.5045
+  -> Best model saved! (LogLoss: 0.6934)
+[Epoch 02/40] Train Loss: 0.6960 Acc: 0.5157 | Val LogLoss: 0.6934 Acc: 0.5045
+[Epoch 03/40] Train Loss: 0.6934 Acc: 0.5269 | Val LogLoss: 0.6689 Acc: 0.6318
+  -> Best model saved! (LogLoss: 0.6689)
+[Epoch 04/40] Train Loss: 0.6895 Acc: 0.5510 | Val LogLoss: 0.6494 Acc: 0.6000
+  -> Best model saved! (LogLoss: 0.6494)
+[Epoch 05/40] Train Loss: 0.5969 Acc: 0.6988 | Val LogLoss: 0.3840 Acc: 0.8409
+  -> Best model saved! (LogLoss: 0.3840)
+[Epoch 06/40] Train Loss: 0.4571 Acc: 0.8275 | Val LogLoss: 0.3560 Acc: 0.8818
+  -> Best model saved! (LogLoss: 0.3560)
+[Epoch 07/40] Train Loss: 0.3868 Acc: 0.8755 | Val LogLoss: 0.1980 Acc: 0.9318
+  -> Best model saved! (LogLoss: 0.1980)
+[Epoch 08/40] Train Loss: 0.3693 Acc: 0.8936 | Val LogLoss: 0.1810 Acc: 0.9636
+  -> Best model saved! (LogLoss: 0.1810)
+[Epoch 09/40] Train Loss: 0.3410 Acc: 0.9096 | Val LogLoss: 0.1754 Acc: 0.9364
+  -> Best model saved! (LogLoss: 0.1754)
+[Epoch 10/40] Train Loss: 0.3306 Acc: 0.9207 | Val LogLoss: 0.1219 Acc: 0.9773
+  -> Best model saved! (LogLoss: 0.1219)
+[Epoch 11/40] Train Loss: 0.3193 Acc: 0.9265 | Val LogLoss: 0.1277 Acc: 0.9636
+[Epoch 12/40] Train Loss: 0.3105 Acc: 0.9311 | Val LogLoss: 0.1008 Acc: 0.9818
+  -> Best model saved! (LogLoss: 0.1008)
+[Epoch 13/40] Train Loss: 0.3023 Acc: 0.9369 | Val LogLoss: 0.0781 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0781)
+[Epoch 14/40] Train Loss: 0.3006 Acc: 0.9390 | Val LogLoss: 0.1168 Acc: 0.9773
+[Epoch 15/40] Train Loss: 0.2886 Acc: 0.9452 | Val LogLoss: 0.0888 Acc: 0.9773
+[Epoch 16/40] Train Loss: 0.2927 Acc: 0.9402 | Val LogLoss: 0.1776 Acc: 0.9500
+[Epoch 17/40] Train Loss: 0.2853 Acc: 0.9446 | Val LogLoss: 0.0817 Acc: 0.9818
+[Epoch 18/40] Train Loss: 0.2808 Acc: 0.9456 | Val LogLoss: 0.0761 Acc: 0.9909
+  -> Best model saved! (LogLoss: 0.0761)
+[Epoch 19/40] Train Loss: 0.2718 Acc: 0.9546 | Val LogLoss: 0.0739 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0739)
+[Epoch 20/40] Train Loss: 0.2672 Acc: 0.9544 | Val LogLoss: 0.0728 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0728)
+[Epoch 21/40] Train Loss: 0.2705 Acc: 0.9584 | Val LogLoss: 0.0750 Acc: 0.9909
+[Epoch 22/40] Train Loss: 0.2597 Acc: 0.9651 | Val LogLoss: 0.0575 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0575)
+[Epoch 23/40] Train Loss: 0.2619 Acc: 0.9612 | Val LogLoss: 0.0811 Acc: 0.9955
+[Epoch 24/40] Train Loss: 0.2559 Acc: 0.9633 | Val LogLoss: 0.0673 Acc: 1.0000
+[Epoch 25/40] Train Loss: 0.2528 Acc: 0.9679 | Val LogLoss: 0.0733 Acc: 0.9909
+[Epoch 26/40] Train Loss: 0.2524 Acc: 0.9657 | Val LogLoss: 0.0609 Acc: 0.9955
+[Epoch 27/40] Train Loss: 0.2486 Acc: 0.9711 | Val LogLoss: 0.0631 Acc: 0.9955
+[Epoch 28/40] Train Loss: 0.2463 Acc: 0.9715 | Val LogLoss: 0.0629 Acc: 0.9909
+[Epoch 29/40] Train Loss: 0.2452 Acc: 0.9705 | Val LogLoss: 0.0569 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0569)
+[Epoch 30/40] Train Loss: 0.2386 Acc: 0.9767 | Val LogLoss: 0.0589 Acc: 1.0000
+[Epoch 31/40] Train Loss: 0.2379 Acc: 0.9765 | Val LogLoss: 0.0574 Acc: 1.0000
+[Epoch 32/40] Train Loss: 0.2408 Acc: 0.9729 | Val LogLoss: 0.0632 Acc: 0.9909
+[Epoch 33/40] Train Loss: 0.2348 Acc: 0.9793 | Val LogLoss: 0.0616 Acc: 0.9955
+[Epoch 34/40] Train Loss: 0.2320 Acc: 0.9787 | Val LogLoss: 0.0592 Acc: 0.9955
+[Epoch 35/40] Train Loss: 0.2293 Acc: 0.9817 | Val LogLoss: 0.0565 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0565)
+[Epoch 36/40] Train Loss: 0.2298 Acc: 0.9799 | Val LogLoss: 0.0583 Acc: 0.9955
+[Epoch 37/40] Train Loss: 0.2241 Acc: 0.9861 | Val LogLoss: 0.0583 Acc: 0.9955
+[Epoch 38/40] Train Loss: 0.2254 Acc: 0.9857 | Val LogLoss: 0.0562 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0562)
+[Epoch 39/40] Train Loss: 0.2264 Acc: 0.9847 | Val LogLoss: 0.0562 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0562)
+[Epoch 40/40] Train Loss: 0.2239 Acc: 0.9855 | Val LogLoss: 0.0557 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0557)
+Fold 1 complete. Best: 0.0557
+
+--- Fold 2/5 ---
+Train: 5004, Val: 220
+[Epoch 01/40] Train Loss: 0.7163 Acc: 0.4922 | Val LogLoss: 0.6938 Acc: 0.4955
+  -> Best model saved! (LogLoss: 0.6938)
+[Epoch 02/40] Train Loss: 0.6982 Acc: 0.5068 | Val LogLoss: 0.7090 Acc: 0.5045
+[Epoch 03/40] Train Loss: 0.6970 Acc: 0.4870 | Val LogLoss: 0.6934 Acc: 0.5045
+  -> Best model saved! (LogLoss: 0.6934)
+[Epoch 04/40] Train Loss: 0.6951 Acc: 0.5046 | Val LogLoss: 0.6924 Acc: 0.4955
+  -> Best model saved! (LogLoss: 0.6924)
+[Epoch 05/40] Train Loss: 0.6941 Acc: 0.5104 | Val LogLoss: 0.6943 Acc: 0.4955
+[Epoch 06/40] Train Loss: 0.6930 Acc: 0.4936 | Val LogLoss: 0.6929 Acc: 0.5045
+[Epoch 07/40] Train Loss: 0.6995 Acc: 0.5130 | Val LogLoss: 0.6934 Acc: 0.4955
+[Epoch 08/40] Train Loss: 0.6955 Acc: 0.4974 | Val LogLoss: 0.6934 Acc: 0.5045
+[Epoch 09/40] Train Loss: 0.6948 Acc: 0.4950 | Val LogLoss: 0.6934 Acc: 0.4955
+[Epoch 10/40] Train Loss: 0.6935 Acc: 0.5060 | Val LogLoss: 0.6929 Acc: 0.5045
+[Epoch 11/40] Train Loss: 0.6935 Acc: 0.4962 | Val LogLoss: 0.6934 Acc: 0.5045
+[Epoch 12/40] Train Loss: 0.6933 Acc: 0.4948 | Val LogLoss: 0.6934 Acc: 0.4955
+[Epoch 13/40] Train Loss: 0.6937 Acc: 0.4990 | Val LogLoss: 0.6934 Acc: 0.4955
+[Epoch 14/40] Train Loss: 0.6930 Acc: 0.5100 | Val LogLoss: 0.6919 Acc: 0.5045
+  -> Best model saved! (LogLoss: 0.6919)
+[Epoch 15/40] Train Loss: 0.6931 Acc: 0.5030 | Val LogLoss: 0.6904 Acc: 0.5545
+  -> Best model saved! (LogLoss: 0.6904)
+[Epoch 16/40] Train Loss: 0.6937 Acc: 0.5008 | Val LogLoss: 0.6929 Acc: 0.5045
+[Epoch 17/40] Train Loss: 0.6933 Acc: 0.5158 | Val LogLoss: 0.6929 Acc: 0.5045
+[Epoch 18/40] Train Loss: 0.6937 Acc: 0.4966 | Val LogLoss: 0.6934 Acc: 0.5045
+[Epoch 19/40] Train Loss: 0.6935 Acc: 0.5076 | Val LogLoss: 0.6895 Acc: 0.5000
+  -> Best model saved! (LogLoss: 0.6895)
+[Epoch 20/40] Train Loss: 0.6923 Acc: 0.5150 | Val LogLoss: 0.6841 Acc: 0.5318
+  -> Best model saved! (LogLoss: 0.6841)
+[Epoch 21/40] Train Loss: 0.6829 Acc: 0.5637 | Val LogLoss: 0.5269 Acc: 0.8045
+  -> Best model saved! (LogLoss: 0.5269)
+[Epoch 22/40] Train Loss: 0.5504 Acc: 0.7518 | Val LogLoss: 0.2925 Acc: 0.8682
+  -> Best model saved! (LogLoss: 0.2925)
+[Epoch 23/40] Train Loss: 0.4026 Acc: 0.8649 | Val LogLoss: 0.2722 Acc: 0.8818
+  -> Best model saved! (LogLoss: 0.2722)
+[Epoch 24/40] Train Loss: 0.3493 Acc: 0.9063 | Val LogLoss: 0.1587 Acc: 0.9591
+  -> Best model saved! (LogLoss: 0.1587)
+[Epoch 25/40] Train Loss: 0.3288 Acc: 0.9167 | Val LogLoss: 0.1249 Acc: 0.9773
+  -> Best model saved! (LogLoss: 0.1249)
+[Epoch 26/40] Train Loss: 0.3114 Acc: 0.9281 | Val LogLoss: 0.1405 Acc: 0.9682
+[Epoch 27/40] Train Loss: 0.2979 Acc: 0.9341 | Val LogLoss: 0.1034 Acc: 0.9773
+  -> Best model saved! (LogLoss: 0.1034)
+[Epoch 28/40] Train Loss: 0.2927 Acc: 0.9384 | Val LogLoss: 0.1148 Acc: 0.9682
+[Epoch 29/40] Train Loss: 0.2935 Acc: 0.9388 | Val LogLoss: 0.0963 Acc: 0.9773
+  -> Best model saved! (LogLoss: 0.0963)
+[Epoch 30/40] Train Loss: 0.2810 Acc: 0.9454 | Val LogLoss: 0.0920 Acc: 0.9864
+  -> Best model saved! (LogLoss: 0.0920)
+[Epoch 31/40] Train Loss: 0.2737 Acc: 0.9496 | Val LogLoss: 0.0988 Acc: 0.9773
+[Epoch 32/40] Train Loss: 0.2763 Acc: 0.9506 | Val LogLoss: 0.1032 Acc: 0.9773
+[Epoch 33/40] Train Loss: 0.2651 Acc: 0.9568 | Val LogLoss: 0.0825 Acc: 0.9909
+  -> Best model saved! (LogLoss: 0.0825)
+[Epoch 34/40] Train Loss: 0.2652 Acc: 0.9566 | Val LogLoss: 0.0829 Acc: 0.9818
+[Epoch 35/40] Train Loss: 0.2613 Acc: 0.9614 | Val LogLoss: 0.0867 Acc: 0.9818
+[Epoch 36/40] Train Loss: 0.2645 Acc: 0.9562 | Val LogLoss: 0.0829 Acc: 0.9818
+[Epoch 37/40] Train Loss: 0.2581 Acc: 0.9616 | Val LogLoss: 0.0779 Acc: 0.9909
+  -> Best model saved! (LogLoss: 0.0779)
+[Epoch 38/40] Train Loss: 0.2572 Acc: 0.9608 | Val LogLoss: 0.0790 Acc: 0.9864
+[Epoch 39/40] Train Loss: 0.2594 Acc: 0.9598 | Val LogLoss: 0.0814 Acc: 0.9818
+[Epoch 40/40] Train Loss: 0.2564 Acc: 0.9620 | Val LogLoss: 0.0814 Acc: 0.9818
+Fold 2 complete. Best: 0.0779
+
+--- Fold 3/5 ---
+Train: 5000, Val: 220
+[Epoch 01/40] Train Loss: 0.7084 Acc: 0.5110 | Val LogLoss: 0.7075 Acc: 0.5000
+  -> Best model saved! (LogLoss: 0.7075)
+[Epoch 02/40] Train Loss: 0.6992 Acc: 0.5064 | Val LogLoss: 0.7012 Acc: 0.5000
+  -> Best model saved! (LogLoss: 0.7012)
+[Epoch 03/40] Train Loss: 0.6931 Acc: 0.5218 | Val LogLoss: 0.6040 Acc: 0.7818
+  -> Best model saved! (LogLoss: 0.6040)
+[Epoch 04/40] Train Loss: 0.6923 Acc: 0.5310 | Val LogLoss: 0.6958 Acc: 0.5000
+[Epoch 05/40] Train Loss: 0.6214 Acc: 0.6672 | Val LogLoss: 0.4695 Acc: 0.7773
+  -> Best model saved! (LogLoss: 0.4695)
+[Epoch 06/40] Train Loss: 0.4628 Acc: 0.8240 | Val LogLoss: 0.2435 Acc: 0.9091
+  -> Best model saved! (LogLoss: 0.2435)
+[Epoch 07/40] Train Loss: 0.4306 Acc: 0.8494 | Val LogLoss: 0.2710 Acc: 0.8909
+[Epoch 08/40] Train Loss: 0.3722 Acc: 0.8972 | Val LogLoss: 0.1511 Acc: 0.9500
+  -> Best model saved! (LogLoss: 0.1511)
+[Epoch 09/40] Train Loss: 0.3369 Acc: 0.9148 | Val LogLoss: 0.1163 Acc: 0.9864
+  -> Best model saved! (LogLoss: 0.1163)
+[Epoch 10/40] Train Loss: 0.3168 Acc: 0.9272 | Val LogLoss: 0.0951 Acc: 0.9909
+  -> Best model saved! (LogLoss: 0.0951)
+[Epoch 11/40] Train Loss: 0.3119 Acc: 0.9284 | Val LogLoss: 0.0883 Acc: 0.9773
+  -> Best model saved! (LogLoss: 0.0883)
+[Epoch 12/40] Train Loss: 0.3010 Acc: 0.9378 | Val LogLoss: 0.1299 Acc: 0.9591
+[Epoch 13/40] Train Loss: 0.3033 Acc: 0.9348 | Val LogLoss: 0.0812 Acc: 0.9909
+  -> Best model saved! (LogLoss: 0.0812)
+[Epoch 14/40] Train Loss: 0.2910 Acc: 0.9388 | Val LogLoss: 0.0566 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0566)
+[Epoch 15/40] Train Loss: 0.2829 Acc: 0.9456 | Val LogLoss: 0.0634 Acc: 0.9909
+[Epoch 16/40] Train Loss: 0.2793 Acc: 0.9488 | Val LogLoss: 0.0539 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0539)
+[Epoch 17/40] Train Loss: 0.2735 Acc: 0.9520 | Val LogLoss: 0.0646 Acc: 0.9909
+[Epoch 18/40] Train Loss: 0.2735 Acc: 0.9530 | Val LogLoss: 0.0626 Acc: 0.9955
+[Epoch 19/40] Train Loss: 0.2730 Acc: 0.9520 | Val LogLoss: 0.0828 Acc: 0.9955
+[Epoch 20/40] Train Loss: 0.2708 Acc: 0.9532 | Val LogLoss: 0.0626 Acc: 0.9955
+[Epoch 21/40] Train Loss: 0.2694 Acc: 0.9536 | Val LogLoss: 0.0709 Acc: 0.9909
+[Epoch 22/40] Train Loss: 0.2662 Acc: 0.9558 | Val LogLoss: 0.0645 Acc: 1.0000
+[Epoch 23/40] Train Loss: 0.2609 Acc: 0.9556 | Val LogLoss: 0.0645 Acc: 0.9955
+[Epoch 24/40] Train Loss: 0.2600 Acc: 0.9596 | Val LogLoss: 0.0658 Acc: 0.9955
+[Epoch 25/40] Train Loss: 0.2552 Acc: 0.9630 | Val LogLoss: 0.0601 Acc: 1.0000
+[Epoch 26/40] Train Loss: 0.2524 Acc: 0.9654 | Val LogLoss: 0.0860 Acc: 0.9864
+[Epoch 27/40] Train Loss: 0.2455 Acc: 0.9704 | Val LogLoss: 0.0621 Acc: 0.9909
+[Epoch 28/40] Train Loss: 0.2453 Acc: 0.9698 | Val LogLoss: 0.0578 Acc: 1.0000
+  -> Early stopping at epoch 28
+Fold 3 complete. Best: 0.0539
+
+--- Fold 4/5 ---
+Train: 5000, Val: 220
+[Epoch 01/40] Train Loss: 0.7071 Acc: 0.5084 | Val LogLoss: 0.6816 Acc: 0.6091
+  -> Best model saved! (LogLoss: 0.6816)
+[Epoch 02/40] Train Loss: 0.6792 Acc: 0.5594 | Val LogLoss: 0.6216 Acc: 0.6318
+  -> Best model saved! (LogLoss: 0.6216)
+[Epoch 03/40] Train Loss: 0.5590 Acc: 0.7436 | Val LogLoss: 0.2271 Acc: 0.9591
+  -> Best model saved! (LogLoss: 0.2271)
+[Epoch 04/40] Train Loss: 0.3940 Acc: 0.8694 | Val LogLoss: 0.1766 Acc: 0.9773
+  -> Best model saved! (LogLoss: 0.1766)
+[Epoch 05/40] Train Loss: 0.3378 Acc: 0.9120 | Val LogLoss: 0.1039 Acc: 0.9864
+  -> Best model saved! (LogLoss: 0.1039)
+[Epoch 06/40] Train Loss: 0.3151 Acc: 0.9278 | Val LogLoss: 0.0695 Acc: 0.9909
+  -> Best model saved! (LogLoss: 0.0695)
+[Epoch 07/40] Train Loss: 0.2980 Acc: 0.9366 | Val LogLoss: 0.0999 Acc: 1.0000
+[Epoch 08/40] Train Loss: 0.2905 Acc: 0.9396 | Val LogLoss: 0.0974 Acc: 0.9727
+[Epoch 09/40] Train Loss: 0.2846 Acc: 0.9434 | Val LogLoss: 0.0790 Acc: 0.9909
+[Epoch 10/40] Train Loss: 0.2734 Acc: 0.9508 | Val LogLoss: 0.0610 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0610)
+[Epoch 11/40] Train Loss: 0.2732 Acc: 0.9574 | Val LogLoss: 0.0736 Acc: 0.9909
+[Epoch 12/40] Train Loss: 0.2706 Acc: 0.9558 | Val LogLoss: 0.0701 Acc: 0.9909
+[Epoch 13/40] Train Loss: 0.2587 Acc: 0.9622 | Val LogLoss: 0.0725 Acc: 0.9909
+[Epoch 14/40] Train Loss: 0.2642 Acc: 0.9586 | Val LogLoss: 0.0633 Acc: 1.0000
+[Epoch 15/40] Train Loss: 0.2537 Acc: 0.9650 | Val LogLoss: 0.0513 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0513)
+[Epoch 16/40] Train Loss: 0.2614 Acc: 0.9576 | Val LogLoss: 0.0669 Acc: 0.9955
+[Epoch 17/40] Train Loss: 0.2486 Acc: 0.9676 | Val LogLoss: 0.0648 Acc: 1.0000
+[Epoch 18/40] Train Loss: 0.2436 Acc: 0.9686 | Val LogLoss: 0.0734 Acc: 0.9864
+[Epoch 19/40] Train Loss: 0.2439 Acc: 0.9724 | Val LogLoss: 0.0512 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0512)
+[Epoch 20/40] Train Loss: 0.2467 Acc: 0.9708 | Val LogLoss: 0.0582 Acc: 1.0000
+[Epoch 21/40] Train Loss: 0.2401 Acc: 0.9728 | Val LogLoss: 0.0546 Acc: 1.0000
+[Epoch 22/40] Train Loss: 0.2342 Acc: 0.9794 | Val LogLoss: 0.0604 Acc: 1.0000
+[Epoch 23/40] Train Loss: 0.2424 Acc: 0.9714 | Val LogLoss: 0.0585 Acc: 1.0000
+[Epoch 24/40] Train Loss: 0.2326 Acc: 0.9774 | Val LogLoss: 0.0542 Acc: 0.9955
+[Epoch 25/40] Train Loss: 0.2283 Acc: 0.9836 | Val LogLoss: 0.0508 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0508)
+[Epoch 26/40] Train Loss: 0.2311 Acc: 0.9810 | Val LogLoss: 0.0507 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0507)
+[Epoch 27/40] Train Loss: 0.2268 Acc: 0.9826 | Val LogLoss: 0.0554 Acc: 1.0000
+[Epoch 28/40] Train Loss: 0.2208 Acc: 0.9876 | Val LogLoss: 0.0524 Acc: 1.0000
+[Epoch 29/40] Train Loss: 0.2198 Acc: 0.9898 | Val LogLoss: 0.0541 Acc: 1.0000
+[Epoch 30/40] Train Loss: 0.2244 Acc: 0.9864 | Val LogLoss: 0.0543 Acc: 1.0000
+[Epoch 31/40] Train Loss: 0.2221 Acc: 0.9878 | Val LogLoss: 0.0525 Acc: 1.0000
+[Epoch 32/40] Train Loss: 0.2209 Acc: 0.9872 | Val LogLoss: 0.0554 Acc: 0.9955
+[Epoch 33/40] Train Loss: 0.2147 Acc: 0.9898 | Val LogLoss: 0.0527 Acc: 1.0000
+[Epoch 34/40] Train Loss: 0.2109 Acc: 0.9940 | Val LogLoss: 0.0560 Acc: 1.0000
+[Epoch 35/40] Train Loss: 0.2162 Acc: 0.9892 | Val LogLoss: 0.0547 Acc: 1.0000
+[Epoch 36/40] Train Loss: 0.2151 Acc: 0.9914 | Val LogLoss: 0.0559 Acc: 1.0000
+[Epoch 37/40] Train Loss: 0.2127 Acc: 0.9918 | Val LogLoss: 0.0555 Acc: 1.0000
+[Epoch 38/40] Train Loss: 0.2131 Acc: 0.9926 | Val LogLoss: 0.0555 Acc: 1.0000
+  -> Early stopping at epoch 38
+Fold 4 complete. Best: 0.0507
+
+--- Fold 5/5 ---
+Train: 5016, Val: 220
+[Epoch 01/40] Train Loss: 0.6984 Acc: 0.5472 | Val LogLoss: 0.6421 Acc: 0.5864
+  -> Best model saved! (LogLoss: 0.6421)
+[Epoch 02/40] Train Loss: 0.5853 Acc: 0.7313 | Val LogLoss: 0.3813 Acc: 0.9227
+  -> Best model saved! (LogLoss: 0.3813)
+[Epoch 03/40] Train Loss: 0.4598 Acc: 0.8413 | Val LogLoss: 0.2571 Acc: 0.9136
+  -> Best model saved! (LogLoss: 0.2571)
+[Epoch 04/40] Train Loss: 0.3838 Acc: 0.8794 | Val LogLoss: 0.1494 Acc: 0.9500
+  -> Best model saved! (LogLoss: 0.1494)
+[Epoch 05/40] Train Loss: 0.3537 Acc: 0.9073 | Val LogLoss: 0.1394 Acc: 0.9591
+  -> Best model saved! (LogLoss: 0.1394)
+[Epoch 06/40] Train Loss: 0.3372 Acc: 0.9121 | Val LogLoss: 0.1184 Acc: 0.9636
+  -> Best model saved! (LogLoss: 0.1184)
+[Epoch 07/40] Train Loss: 0.3200 Acc: 0.9185 | Val LogLoss: 0.1371 Acc: 0.9727
+[Epoch 08/40] Train Loss: 0.3103 Acc: 0.9258 | Val LogLoss: 0.0854 Acc: 0.9909
+  -> Best model saved! (LogLoss: 0.0854)
+[Epoch 09/40] Train Loss: 0.2969 Acc: 0.9376 | Val LogLoss: 0.0780 Acc: 0.9909
+  -> Best model saved! (LogLoss: 0.0780)
+[Epoch 10/40] Train Loss: 0.2990 Acc: 0.9336 | Val LogLoss: 0.0775 Acc: 0.9909
+  -> Best model saved! (LogLoss: 0.0775)
+[Epoch 11/40] Train Loss: 0.2868 Acc: 0.9440 | Val LogLoss: 0.1595 Acc: 0.9455
+[Epoch 12/40] Train Loss: 0.2805 Acc: 0.9512 | Val LogLoss: 0.1451 Acc: 0.9591
+[Epoch 13/40] Train Loss: 0.2831 Acc: 0.9430 | Val LogLoss: 0.0819 Acc: 0.9864
+[Epoch 14/40] Train Loss: 0.2696 Acc: 0.9555 | Val LogLoss: 0.0814 Acc: 0.9909
+[Epoch 15/40] Train Loss: 0.2762 Acc: 0.9492 | Val LogLoss: 0.0865 Acc: 0.9864
+[Epoch 16/40] Train Loss: 0.2636 Acc: 0.9581 | Val LogLoss: 0.0714 Acc: 0.9864
+  -> Best model saved! (LogLoss: 0.0714)
+[Epoch 17/40] Train Loss: 0.2631 Acc: 0.9573 | Val LogLoss: 0.0880 Acc: 0.9955
+[Epoch 18/40] Train Loss: 0.2528 Acc: 0.9663 | Val LogLoss: 0.0815 Acc: 0.9909
+[Epoch 19/40] Train Loss: 0.2604 Acc: 0.9591 | Val LogLoss: 0.0746 Acc: 0.9864
+[Epoch 20/40] Train Loss: 0.2503 Acc: 0.9677 | Val LogLoss: 0.0678 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.0678)
+[Epoch 21/40] Train Loss: 0.2482 Acc: 0.9707 | Val LogLoss: 0.0708 Acc: 0.9909
+[Epoch 22/40] Train Loss: 0.2463 Acc: 0.9731 | Val LogLoss: 0.0665 Acc: 0.9909
+  -> Best model saved! (LogLoss: 0.0665)
+[Epoch 23/40] Train Loss: 0.2420 Acc: 0.9735 | Val LogLoss: 0.0621 Acc: 0.9909
+  -> Best model saved! (LogLoss: 0.0621)
+[Epoch 24/40] Train Loss: 0.2341 Acc: 0.9795 | Val LogLoss: 0.0561 Acc: 1.0000
+  -> Best model saved! (LogLoss: 0.0561)
+[Epoch 25/40] Train Loss: 0.2313 Acc: 0.9835 | Val LogLoss: 0.0618 Acc: 1.0000
+[Epoch 26/40] Train Loss: 0.2311 Acc: 0.9813 | Val LogLoss: 0.0731 Acc: 0.9955
+[Epoch 27/40] Train Loss: 0.2276 Acc: 0.9844 | Val LogLoss: 0.0594 Acc: 1.0000
+[Epoch 28/40] Train Loss: 0.2306 Acc: 0.9819 | Val LogLoss: 0.0643 Acc: 0.9955
+[Epoch 29/40] Train Loss: 0.2241 Acc: 0.9862 | Val LogLoss: 0.0665 Acc: 0.9955
+[Epoch 30/40] Train Loss: 0.2200 Acc: 0.9886 | Val LogLoss: 0.0685 Acc: 0.9955
+[Epoch 31/40] Train Loss: 0.2184 Acc: 0.9892 | Val LogLoss: 0.0569 Acc: 1.0000
+[Epoch 32/40] Train Loss: 0.2190 Acc: 0.9892 | Val LogLoss: 0.0584 Acc: 0.9955
+[Epoch 33/40] Train Loss: 0.2186 Acc: 0.9892 | Val LogLoss: 0.0587 Acc: 0.9955
+[Epoch 34/40] Train Loss: 0.2212 Acc: 0.9884 | Val LogLoss: 0.0587 Acc: 1.0000
+[Epoch 35/40] Train Loss: 0.2154 Acc: 0.9896 | Val LogLoss: 0.0585 Acc: 0.9955
+[Epoch 36/40] Train Loss: 0.2117 Acc: 0.9934 | Val LogLoss: 0.0576 Acc: 1.0000
+  -> Early stopping at epoch 36
+Fold 5 complete. Best: 0.0561
+
+eva02 complete! Folds: [np.float16(0.05573), np.float16(0.0779), np.float16(0.05386), np.float16(0.05066), np.float16(0.05612)], Mean: 0.0588
+
+============================================================
+All models trained!
+  convnext: [np.float16(0.04926), np.float16(0.04022), np.float16(0.0479), np.float16(0.049), np.float16(0.0459)] → Mean: 0.0464
+  swin: [np.float16(0.04965), np.float16(0.04474), np.float16(0.03873), np.float16(0.04767), np.float16(0.0421)] → Mean: 0.0446
+  eva02: [np.float16(0.05573), np.float16(0.0779), np.float16(0.05386), np.float16(0.05066), np.float16(0.05612)] → Mean: 0.0588
+============================================================
+
+===== Step 3: Inference + Stacking =====
+Device: cuda:0
+
+--- Inference: convnext (convnext_small.fb_in22k_ft_in1k) ---
+  Fold 1/5 done
+  Fold 2/5 done
+  Fold 3/5 done
+  Fold 4/5 done
+  Fold 5/5 done
+
+--- Inference: swin (swin_base_patch4_window7_224) ---
+  Fold 1/5 done
+  Fold 2/5 done
+  Fold 3/5 done
+  Fold 4/5 done
+  Fold 5/5 done
+
+--- Inference: eva02 (eva02_small_patch14_336.mim_in22k_ft_in1k) ---
+  Fold 1/5 done
+  Fold 2/5 done
+  Fold 3/5 done
+  Fold 4/5 done
+  Fold 5/5 done
+
+=== Stacking with OOF predictions ===
+Meta-learner coefficients: [-3.73821527 -3.76173516 -3.40476176]
+Meta-learner intercept: 5.3810
+Stacking OOF LogLoss: 0.0077
+Stacking T=0.7: range [0.0009, 0.9993]
+Stacking T=0.8: range [0.0021, 0.9983]
+Stacking T=1.0: range [0.0071, 0.9938]
+
+=== Simple weighted average ===
+w433 T=0.7: range [0.0107, 0.9893]
+w353530 T=0.7: range [0.0109, 0.9893]
+w502525 T=0.7: range [0.0102, 0.9888]
+
+Done! 추천 제출: submission_stack_T0.7.csv
+
+===== All done! =====
