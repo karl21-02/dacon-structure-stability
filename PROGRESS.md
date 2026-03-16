@@ -48,6 +48,22 @@
 | timm | 1.0.25 |
 | venv | `.venv/` |
 
+### 백그라운드 학습 (SSH 끊겨도 유지)
+
+```bash
+# 학습 실행
+nohup .venv/bin/python experiments/expXXX/train.py > experiments/expXXX/train.log 2>&1 &
+
+# 로그 확인
+tail -f experiments/expXXX/train.log
+
+# 프로세스 확인
+ps aux | grep train.py
+
+# 중단
+kill <PID>
+```
+
 ## 프로젝트 구조
 
 ```
@@ -67,7 +83,12 @@ dacon/
 │   ├── exp009_efficientnet_kfold/       # EfficientNet-B3 5-Fold
 │   ├── exp010_10fold_seed_ensemble/     # 10-Fold x 3-Seed
 │   ├── exp011_dualview_physics/         # 듀얼뷰 (front+top)
-│   └── exp012_calibration_pseudo/       # Pseudo-Label + Temperature Scaling ★ 최고
+│   ├── exp012_calibration_pseudo/       # Pseudo-Label + Temperature Scaling
+│   ├── exp013_mixup/                    # Mixup (역효과)
+│   ├── exp014_video_softlabel/          # 영상 Soft Label (실패)
+│   ├── exp015_multiframe/               # 멀티프레임 증강 ★ Dacon 0.0362
+│   ├── exp016_strategic_frames/         # 전략적 프레임 + SWA
+│   └── exp017_swin_blend/               # Swin Transformer + 블렌딩
 └── .venv/                               # 가상환경
 ```
 
