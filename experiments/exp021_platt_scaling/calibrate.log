@@ -1,0 +1,35 @@
+Device: cuda:0
+
+=== Step 1: OOF logits 수집 ===
+Fold 1 OOF collected
+Fold 2 OOF collected
+Fold 3 OOF collected
+Fold 4 OOF collected
+Fold 5 OOF collected
+
+=== Step 2: 보정 방법 비교 ===
+Temperature T=1.0: 0.052999
+Best Temperature T=0.47: 0.013793
+Platt Scaling: 0.014197
+Isotonic Regression: 0.005480
+
+=== Step 3: Test 추론 ===
+Fold 1 test inference done
+Fold 2 test inference done
+Fold 3 test inference done
+Fold 4 test inference done
+Fold 5 test inference done
+Temp T=0.47: range [0.000751, 0.999142]
+Temp T=0.30: range [0.000013, 1.000000]
+Temp T=0.40: range [0.000213, 1.000000]
+Temp T=0.50: range [0.001156, 0.999023]
+Temp T=0.70: range [0.007942, 0.991211]
+Platt: range [0.000752, 0.998611]
+Isotonic: range [0.000000, 1.000000]
+
+=== Step 4: exp018 블렌딩 + Platt ===
+Platt 30% + exp018 70%
+Platt 40% + exp018 60%
+Platt 50% + exp018 50%
+
+Done!
