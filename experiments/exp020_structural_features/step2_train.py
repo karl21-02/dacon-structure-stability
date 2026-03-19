@@ -291,7 +291,11 @@ def main():
     oof_preds = np.zeros((len(all_real), 2))
     fold_scores = []
 
+    START_FOLD = int(os.environ.get("START_FOLD", 0))
     for fold, (train_idx, val_idx) in enumerate(skf.split(all_real, real_labels)):
+        if fold < START_FOLD:
+            print(f"Fold {fold+1}/{N_FOLDS} — skipped (already done)")
+            continue
         print(f"\n{'='*50}")
         print(f"Fold {fold+1}/{N_FOLDS}")
         print(f"{'='*50}")
