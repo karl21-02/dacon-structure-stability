@@ -1,0 +1,47 @@
+Device: cuda:0
+Model: convnext_small.fb_in22k_ft_in1k + Cross-Attention
+Layer Decay: 0.65
+Focal Loss gamma: 2.0
+Head LR: 0.0003, Backbone LR: 1e-05
+Real: 1100, Pseudo: 928
+
+==================================================
+Fold 1/5
+==================================================
+Train: 5020, Val: 220
+Layer-wise LR:
+  stem: lr=0.000002
+  stage_0: lr=0.000003
+  stage_1: lr=0.000004
+  stage_2: lr=0.000007
+  stage_3: lr=0.000010
+  backbone_other: lr=0.000010
+  cross_attn_f2t: lr=0.000300
+  cross_attn_t2f: lr=0.000300
+  norm_front: lr=0.000300
+  norm_top: lr=0.000300
+  feat_net: lr=0.000300
+  head: lr=0.000300
+[Epoch 01/40] Train Loss: 0.1183 Acc: 0.9108 | Val LogLoss: 0.4124 Acc: 0.9682
+  -> Best model saved! (LogLoss: 0.4124)
+[Epoch 02/40] Train Loss: 0.0989 Acc: 0.9769 | Val LogLoss: 0.3833 Acc: 0.9909
+  -> Best model saved! (LogLoss: 0.3833)
+[Epoch 03/40] Train Loss: 0.0956 Acc: 0.9859 | Val LogLoss: 0.3713 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.3713)
+[Epoch 04/40] Train Loss: 0.0942 Acc: 0.9863 | Val LogLoss: 0.3752 Acc: 0.9909
+[Epoch 05/40] Train Loss: 0.0929 Acc: 0.9912 | Val LogLoss: 0.3716 Acc: 0.9955
+[Epoch 06/40] Train Loss: 0.0919 Acc: 0.9916 | Val LogLoss: 0.3750 Acc: 0.9955
+[Epoch 07/40] Train Loss: 0.0909 Acc: 0.9938 | Val LogLoss: 0.3770 Acc: 0.9955
+[Epoch 08/40] Train Loss: 0.0908 Acc: 0.9924 | Val LogLoss: 0.3594 Acc: 0.9955
+  -> Best model saved! (LogLoss: 0.3594)
+[Epoch 09/40] Train Loss: 0.0906 Acc: 0.9950 | Val LogLoss: 0.3684 Acc: 0.9955
+[Epoch 10/40] Train Loss: 0.0908 Acc: 0.9942 | Val LogLoss: 0.3650 Acc: 0.9955
+[Epoch 11/40] Train Loss: 0.0899 Acc: 0.9964 | Val LogLoss: 0.3826 Acc: 0.9955
+[Epoch 12/40] Train Loss: 0.0898 Acc: 0.9956 | Val LogLoss: 0.3696 Acc: 0.9955
+[Epoch 13/40] Train Loss: 0.0896 Acc: 0.9972 | Val LogLoss: 0.3604 Acc: 1.0000
+[Epoch 14/40] Train Loss: 0.0892 Acc: 0.9980 | Val LogLoss: 0.3706 Acc: 0.9955
+[Epoch 15/40] Train Loss: 0.0897 Acc: 0.9964 | Val LogLoss: 0.3650 Acc: 0.9955
+[Epoch 16/40] Train Loss: 0.0897 Acc: 0.9950 | Val LogLoss: 0.3818 Acc: 0.9955
+[Epoch 17/40] Train Loss: 0.0896 Acc: 0.9958 | Val LogLoss: 0.3823 Acc: 0.9955
+[Epoch 18/40] Train Loss: 0.0891 Acc: 0.9976 | Val LogLoss: 0.3684 Acc: 0.9955
+[Epoch 19/40] Train Loss: 0.0894 Acc: 0.9966 | Val LogLoss: 0.3723 Acc: 0.9955
