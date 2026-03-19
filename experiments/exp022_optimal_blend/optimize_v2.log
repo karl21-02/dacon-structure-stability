@@ -1,0 +1,30 @@
+전체: 1100, 모든 모델 채워진: 660
+
+=== 개별 모델 OOF LogLoss ===
+  convnext: 0.047615
+  swin: 0.042851
+  eva02: 0.053543
+  structural: 0.045385
+
+=== Grid Search (10% 단위) ===
+  Weights: {'convnext': np.float64(0.0), 'swin': np.float64(1.0), 'eva02': np.float64(0.0), 'structural': np.float64(0.0)}
+  LogLoss: 0.042851
+
+=== Fine Grid (5% 단위) ===
+  Weights: {'convnext': np.float64(0.0), 'swin': np.float64(1.0), 'eva02': np.float64(0.0), 'structural': np.float64(0.0)}
+  LogLoss: 0.042851
+
+=== Differential Evolution + Temperature ===
+  Weights: {'convnext': np.float64(0.719698326893714), 'swin': np.float64(0.10038622746284534), 'eva02': np.float64(1.5079422260535004e-08), 'structural': np.float64(0.17991543056401832)}
+  Temperature: 0.1000
+  LogLoss: 0.000000
+
+=== Test Submission 생성 ===
+  Available test preds: ['convnext', 'structural']
+
+=== 2-Model 블렌딩 + Temperature ===
+  submission_stack50_struct50_T0.10.csv
+  submission_stack60_struct40_T0.10.csv
+  submission_stack70_struct30_T0.10.csv
+
+Done!

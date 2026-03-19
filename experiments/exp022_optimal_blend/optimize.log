@@ -1,0 +1,39 @@
+=== OOF 모델 목록 ===
+  convnext: 1100/1100 filled
+  swin: 1100/1100 filled
+  eva02: 1100/1100 filled
+  structural: 660/1100 filled
+
+모든 모델 채워진 샘플: 660/1100
+
+=== 개별 모델 OOF LogLoss ===
+  convnext: 1.246239
+  swin: 1.253055
+  eva02: 1.239475
+  structural: 1.249461
+
+=== Grid Search (5% 단위) ===
+  Best weights: {'convnext': np.float64(0.0), 'swin': np.float64(0.0), 'eva02': np.float64(1.0), 'structural': np.float64(0.0)}
+  LogLoss: 1.239475
+
+=== Differential Evolution ===
+  Best weights: {'convnext': np.float64(1.6680176014618617e-09), 'swin': np.float64(1.7465593749003525e-09), 'eva02': np.float64(0.999999996173236), 'structural': np.float64(4.1218699412105283e-10)}
+  Best temperature: 2.0000
+  LogLoss: 0.942462
+
+=== Nelder-Mead (fine-tuning) ===
+  Best weights: {'convnext': np.float64(-0.008089835896469891), 'swin': np.float64(-0.033736848061449366), 'eva02': np.float64(1.043654562756721), 'structural': np.float64(-0.0018278787988018992)}
+  Best temperature: 499291977880920.5000
+  LogLoss: 0.693147
+
+=== Test Submission 생성 ===
+  WARNING: /home/pascal/Ora/kimjunhee/workspace/dacon/experiments/exp022_optimal_blend/../exp018_triple_stack/test_logits_convnext.npy not found
+  WARNING: /home/pascal/Ora/kimjunhee/workspace/dacon/experiments/exp022_optimal_blend/../exp018_triple_stack/test_logits_swin.npy not found
+  WARNING: /home/pascal/Ora/kimjunhee/workspace/dacon/experiments/exp022_optimal_blend/../exp018_triple_stack/test_logits_eva02.npy not found
+  exp018 logit files: []
+  Available for test: ['structural']
+
+  일부 모델 logits 없음 → 가용한 submission으로 블렌딩
+  2-model blending submissions generated
+
+Done!
